@@ -1,17 +1,11 @@
-/* body fix: perquè ocupi tota la pantalla */
 html, body {
     height: 100vh;
-    width: 100%;
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-    flex-flow: column;
+    flex-direction: column;
 }
-   
-  /*
-   * afegir la class tabs-content a cada div de contingut
-   * per solucionar el contingut scollable de cada pestanya
-   */
 .tabs-content {
-    height: 100%;
-    overflow-y: scroll !important;
+    height: 60vh;
+    overflow-y: auto;
+    padding: 20px;
 }

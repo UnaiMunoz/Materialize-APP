@@ -6,46 +6,48 @@
     <title>Material APP</title>
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/index.css" media="screen,projection">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
+    <!-- Side Navigation -->
     <ul id="slide-out" class="sidenav">
         <li>
             <div class="user-view">
-                <div class="background">
-                    <img src="">
-                </div>
-                <a href="#user"><img class="circle" src=""></a>
+                <div class="background blue lighten-2"></div>
+                <a href="#user"><img class="circle" src="https://via.placeholder.com/80" alt="User"></a>
                 <a href="#name"><span class="white-text name">John Doe</span></a>
                 <a href="#email"><span class="white-text email">jdoe@example.com</span></a>
             </div>
         </li>
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link</a></li>
         <li><a href="#!">Second Link</a></li>
-        <li>
-            <div class="divider">
-                
-            </div>
-        </li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">More</a></li>
+        <li><a class="waves-effect" href="#!">Third Link</a></li>
     </ul>
 
+    <!-- Navbar with Sidenav Trigger -->
+    <nav class="blue">
+        <div class="nav-wrapper">
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo center">Material App</a>
+        </div>
+    </nav>
+    
     <!-- Tabs -->
-    <ul id="tabs-swipe-demo" class="tabs" style="display: flex;">
-        <li><a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons" style="margin: 50% 50%;">menu</i></a></li>
-        <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-        <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
-        <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
-    </ul>
-    <div id="test-swipe-1" class="col s12 blue">Test 1</div>
-    <div id="test-swipe-2" class="col s12 red">Test 2</div>
-    <div id="test-swipe-3" class="col s12 green">Test 3</div>
+    <div class="container">
+        <ul id="tabs-swipe-demo" class="tabs">
+            <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
+            <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+            <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
+        </ul>
+        <div id="test-swipe-1" class="col s12 blue lighten-4 tabs-content">Content for Test 1</div>
+        <div id="test-swipe-2" class="col s12 red lighten-4 tabs-content">Content for Test 2</div>
+        <div id="test-swipe-3" class="col s12 green lighten-4 tabs-content">Content for Test 3</div>
+    </div>
     
     <script src="cordova.js"></script>
-    <script src="js/index.js"></script>
     <script src="js/materialize.js"></script>
-
+    <script src="js/index.js"></script>
 </body>
 </html>
