@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    overflow: none;
 }
 .tabs-content {
     height: 100vh;
@@ -14,4 +15,23 @@ html, body {
 }
 #camera-preview {
     border: 2px solid #000;
+}
+
+#pokemon-details .card {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#pokemon-details .progress {
+    margin-top: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#pokemon-details .collection {
+    margin-top: 15px;
+}
+
+#pokemon-details .collection-item {
+    display: flex;
+    flex-direction: column;
 }

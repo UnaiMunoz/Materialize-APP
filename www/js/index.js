@@ -52,6 +52,8 @@ async function fetchPokemon() {
         data.results.forEach(async (pokemon) => {
             const pokemonData = await fetch(pokemon.url).then(res => res.json());
             const card = document.createElement('div');
+            // Dentro de fetchPokemon, después de crear la tarjeta:
+            card.addEventListener('click', () => showPokemonDetails(pokemonData));
             card.className = 'col s12 m6 l4';
             card.innerHTML = `
                 <div class="card">
@@ -68,4 +70,44 @@ async function fetchPokemon() {
     } catch (error) {
         console.error('Error fetching Pokémon:', error);
     }
+}
+
+function showPokemonDetails(pokemon) {
+    // Cambiar a la segunda pestaña
+    const tabsInstance = M.Tabs.getInstance(document.querySelector('.tabs'));
+    tabsInstance.select('test-swipe-2');
+
+    // Crear contenido de detalles
+    const detailsContainer = document.getElementById('pokemon-details');
+    detailsContainer.innerHTML = `
+        <div class="card">
+            <div class="card-image center">
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" style="max-width: 200px;">
+            </div>
+            <div class="card-content">
+                <span class="card-title">${pokemon.name.toUpperCase()}</span>
+                <p>Altura: ${pokemon.height / 10}m</p>
+                <p>Peso: ${pokemon.weight / 10}kg</p>
+                
+                <h5>Habilidades</h5>
+                <div class="collection">
+                    ${pokemon.abilities.map(ability => 
+                        `<div class="collection-item">${ability.ability.name}</div>`
+                    ).join('')}
+                </div>
+
+                <h5>Estadísticas</h5>
+                <ul class="collection">
+                    ${pokemon.stats.map(stat => `
+                        <li class="collection-item">
+                            ${stat.stat.name}: ${stat.base_stat}
+                            <div class="progress">
+                                <div class="determinate" style="width: ${(stat.base_stat / 255) * 100}%"></div>
+                            </div>
+                        </li>`
+                    ).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
 }
