@@ -89,14 +89,14 @@ function showPokemonDetails(pokemon) {
                 <p>Altura: ${pokemon.height / 10}m</p>
                 <p>Peso: ${pokemon.weight / 10}kg</p>
                 
-                <h5>Habilidades</h5>
+                <h5>Abilities</h5>
                 <div class="collection">
                     ${pokemon.abilities.map(ability => 
                         `<div class="collection-item">${ability.ability.name}</div>`
                     ).join('')}
                 </div>
 
-                <h5>Estadísticas</h5>
+                <h5>Stats</h5>
                 <ul class="collection">
                     ${pokemon.stats.map(stat => `
                         <li class="collection-item">
